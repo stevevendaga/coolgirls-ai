@@ -243,7 +243,7 @@ async def replace_uploaded_file(
         category_dir.mkdir(parents=True, exist_ok=True)
         
         # Generate unique filename to prevent conflicts
-        unique_filename = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{file.filename}"
+        unique_filename = f"{datetime.now().strftime('%Y%m%d%H%M%S')}_{file.filename}"
         file_path = category_dir / unique_filename
         
         # Save new file to the specified location
