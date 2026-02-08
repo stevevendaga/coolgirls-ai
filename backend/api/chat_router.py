@@ -63,7 +63,7 @@ class ChatResponse(BaseModel):
 
 @router.get("/")
 async def root():
-    return {"message": "AI Digital Twin API with Memory"}
+    return {"message": "Cool Girls AI Assistant"}
 
 
 @router.get("/health")
