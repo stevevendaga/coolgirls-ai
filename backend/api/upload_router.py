@@ -165,8 +165,10 @@ async def delete_uploaded_file(document_id: int):
         
         # Delete the physical file
         file_path = Path("uploads") / category.name / document.fileName
+        file_path_md = Path("uploads") / category.name / f"{Path(document.fileName).stem}.md"
         if file_path.exists():
             file_path.unlink()
+            file_path_md.unlink()           
         
         # Delete the document record
         db.delete(document)
@@ -222,8 +224,12 @@ async def replace_uploaded_file(
         
         # Delete the old file
         old_file_path = Path("uploads") / old_category.name / document.fileName
+        old_file_path_md = Path("uploads") / old_category.name /  f"{Path(document.fileName).stem}.md"
         if old_file_path.exists():
             old_file_path.unlink()
+            old_file_path_md.unlink()
+        
+            
         
         # Get new category name
         new_category = db.query(Category).filter(Category.id == int(categoryId)).first()
