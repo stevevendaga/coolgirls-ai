@@ -1,20 +1,21 @@
-// components/Sidebar.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, MessageSquare, Settings, HelpCircle, LogOut } from 'lucide-react';
+import { Menu, X, MessageSquare, Settings, Upload, Code, LogOut } from 'lucide-react';
 import Link from 'next/link';
+import { useUser, useAuth } from '@clerk/nextjs';
 
 type SidebarItem = {
   label: string;
   icon: React.ReactNode;
-  href?: string;
-  onClick?: () => void;
+  href: string;
 };
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { isSignedIn, signOut } = useAuth();
+  const { user } = useUser();
 
   // Check if mobile view
   useEffect(() => {
@@ -44,23 +45,23 @@ export default function Sidebar() {
       href: '/',
     },
     {
+      label: 'Upload',
+      icon: <Upload className="w-5 h-5" />,
+      href: '/upload',
+    },
+    {
+      label: 'Embed Chat',
+      icon: <Code className="w-5 h-5" />,
+      href: '/embed',
+    },
+    {
       label: 'Settings',
       icon: <Settings className="w-5 h-5" />,
       href: '/settings',
     },
-    {
-      label: 'Help',
-      icon: <HelpCircle className="w-5 h-5" />,
-      href: '/help',
-    },
-    {
-      label: 'Logout',
-      icon: <LogOut className="w-5 h-5" />,
-      onClick: () => {
-        console.log('Logging out...');
-      },
-    },
   ];
+
+  if (!isSignedIn) return null;
 
   return (
     <>
@@ -88,7 +89,9 @@ export default function Sidebar() {
           flex flex-col`}
       >
         <div className="p-4 border-b border-gray-700 flex items-center">
-          <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl w-16 h-16 flex items-center justify-center">
+            <MessageSquare className="w-8 h-8 text-white" />
+          </div>
           {isOpen && (
             <div className="ml-3">
               <h1 className="text-xl font-bold">CoolGirls AI</h1>
@@ -101,52 +104,44 @@ export default function Sidebar() {
           <ul>
             {sidebarItems.map((item, index) => (
               <li key={index}>
-                {item.href ? (
-                  <Link href={item.href}>
-                    <div className={`flex items-center px-4 py-3 hover:bg-gray-800 cursor-pointer ${
-                      isOpen ? 'justify-start' : 'justify-center'
-                    }`}>
-                      <span>{item.icon}</span>
-                      {isOpen && <span className="ml-3">{item.label}</span>}
-                    </div>
-                  </Link>
-                ) : (
-                  <div 
-                    onClick={item.onClick}
-                    className={`flex items-center px-4 py-3 hover:bg-gray-800 cursor-pointer ${
-                      isOpen ? 'justify-start' : 'justify-center'
-                    }`}
-                  >
-                    <span>{item.icon}</span>
-                    {isOpen && <span className="ml-3">{item.label}</span>}
-                  </div>
-                )}
+                <Link 
+                  href={item.href}
+                  className={`flex items-center px-4 py-3 hover:bg-gray-800 transition-colors ${
+                    isOpen ? 'justify-start' : 'justify-center'
+                  }`}
+                >
+                  <span className="flex-shrink-0">
+                    {item.icon}
+                  </span>
+                  {isOpen && (
+                    <span className="ml-3">
+                      {item.label}
+                    </span>
+                  )}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className={`p-4 border-t border-gray-700 ${isOpen ? 'text-left' : 'text-center'}`}>
-          {isOpen ? (
-            <div>
-              <p className="text-sm text-gray-400">v1.0.0</p>
-              <p className="text-xs text-gray-500 mt-1">© 2024 CoolGirls AI</p>
-            </div>
-          ) : (
-            <div>
-              <p className="text-xs text-gray-400">v1.0.0</p>
-            </div>
-          )}
+        <div className="p-4 border-t border-gray-700">
+          <div className="flex items-center">
+            <div className="bg-gray-200 border-2 border-dashed rounded-full w-10 h-10" />
+            {isOpen && (
+              <div className="ml-3">
+                <p className="text-sm font-medium">{user?.firstName || user?.emailAddresses[0]?.emailAddress}</p>
+                <button 
+                  onClick={() => signOut()}
+                  className="text-xs text-gray-400 hover:text-white flex items-center"
+                >
+                  <LogOut className="w-4 h-4 mr-1" />
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </aside>
-
-      {/* For mobile: Close sidebar when clicking outside */}
-      {isMobile && isOpen && (
-        <div 
-          className="fixed inset-0 z-30 md:hidden"
-          onClick={toggleSidebar}
-        />
-      )}
     </>
   );
 }
