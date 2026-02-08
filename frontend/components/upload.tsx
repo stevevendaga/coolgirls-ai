@@ -2,7 +2,7 @@
 'use client'
 
 import { useState, ChangeEvent, FormEvent, useRef, useEffect } from 'react';
-import { Trash2, Upload, FileIcon, ExternalLink } from 'lucide-react';
+import { Trash2, Upload, FileIcon, ExternalLink, Eye, Download } from 'lucide-react';
 import Swal from 'sweetalert2';
 
 type UploadedFile = {
@@ -44,6 +44,13 @@ export default function UploadData() {
   const [replaceCategoryId, setReplaceCategoryId] = useState('');
   const [replaceLoading, setReplaceLoading] = useState(false);
   const [replaceError, setReplaceError] = useState<string | null>(null);
+
+  
+// Add this utility function at the top of your component:
+const isPreviewable = (filename: string): boolean => {
+  const ext = filename.toLowerCase().split('.').pop();
+  return ['pdf', 'jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext || '');
+};
 
   // Load categories from API when component mounts
   useEffect(() => {
@@ -426,7 +433,7 @@ export default function UploadData() {
       <div className="lg:w-8/12 w-full">
         <div className="bg-white rounded-2xl shadow-xl p-6 h-full">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-bold text-gray-800">Uploaded Files</h2>
+            <h2 className="text-xl font-bold text-gray-800">View Uploaded Files</h2>
             <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
               {files.length} files
             </span>
@@ -463,11 +470,44 @@ export default function UploadData() {
                     <div>
                       <h3 className="font-semibold text-gray-800 truncate max-w-[200px]">{file.title}</h3>
                       <p className="text-sm text-gray-500">Category: {file.categoryName}</p>
-                      <p className="text-xs text-gray-400 mt-1"><a href={file.fileUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="p-0 text-blue-500 hover:text-blue-700"
-                        title="View file">{file.fileName}</a></p>
+                     
+                     <p className="text-xs text-gray-400 mt-1">
+                        <a 
+                          href={file.fileUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-0 text-blue-500 hover:text-blue-700 break-all"
+                          title="View or download file"
+                        >
+                          {file.fileName}
+                        </a>
+                      </p>
+
+
+                      {/* {
+                        isPreviewable(file.fileName) ? (
+                          <a 
+                            href={file.fileUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="p-1 text-blue-500 hover:text-blue-700"
+                            title="Preview file"
+                          >
+                            <Eye className="h-5 w-5" />
+                          </a>
+                        ) : (
+                          <a 
+                            href={file.fileUrl} 
+                            download
+                            className="p-1 text-blue-500 hover:text-blue-700"
+                            title="Download file"
+                          >
+                            
+                          </a>
+                        )
+                      } */}
+
+
                       <p className="text-xs text-gray-400">{formatDate(file.createdAt)}</p>
                     </div>
                     
