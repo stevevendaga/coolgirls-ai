@@ -12,6 +12,35 @@ from utils.convert_markdown import convert_to_markdown_single
 
 router = APIRouter(prefix="/api", tags=["upload"])
 
+from chromadb import PersistentClient
+import asyncio
+
+# Initialize Chroma client
+chroma_client = PersistentClient(path="coolgirls_vector_db")
+collection = chroma_client.get_or_create_collection("docs")
+
+async def delete_embeddings_from_file(file_path: str):
+    """
+    Delete embeddings associated with a specific file from ChromaDB
+    """
+    try:
+        # Extract the relative file path to match metadata
+        relative_file_path = Path(file_path).relative_to(Path.cwd()).as_posix()
+        
+        # Query documents that have the file path in their metadata
+        # This assumes that file paths are stored in the metadata when embeddings are created
+        results = collection.get(where={"source": str(file_path)})
+        
+        if results and "ids" in results and results["ids"]:
+            # Delete the documents by their IDs
+            collection.delete(ids=results["ids"])
+            print(f"Deleted {len(results['ids'])} embeddings for file: {file_path}")
+        else:
+            print(f"No embeddings found for file: {file_path}")
+            
+    except Exception as e:
+        print(f"Error deleting embeddings for file {file_path}: {e}")
+
 @router.post("/upload")
 async def upload_file(
     background_tasks: BackgroundTasks,
@@ -166,6 +195,11 @@ async def delete_uploaded_file(document_id: int):
         # Delete the physical file
         file_path = Path("uploads") / category.name / document.fileName
         file_path_md = Path("uploads") / category.name / f"{Path(document.fileName).stem}.md"
+        
+        # Delete embeddings from ChromaDB before deleting files
+        abs_file_path_md = file_path_md.resolve().as_posix()  # Get absolute path and convert to POSIX format
+        await delete_embeddings_from_file(abs_file_path_md)
+
         if file_path.exists():
             file_path.unlink()
             file_path_md.unlink()           
