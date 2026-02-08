@@ -187,6 +187,7 @@ async def delete_uploaded_file(document_id: int):
 
 @router.put("/uploaded-files/{document_id}/replace")
 async def replace_uploaded_file(
+    background_tasks: BackgroundTasks,
     document_id: int,
     file: UploadFile = File(...),
     title: str = Form(...),
@@ -258,6 +259,10 @@ async def replace_uploaded_file(
         db.commit()
         db.refresh(document)
         
+        # Convert to markdown
+        # Run conversion in the background
+        background_tasks.add_task(convert_to_markdown_single, str(file_path))
+
         return {
             "message": "File replaced successfully",
             "document_id": document.id,

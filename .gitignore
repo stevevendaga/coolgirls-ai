@@ -5,6 +5,7 @@ coolgirls_vector_db
 backend/.python-version
 frontend/node_modules
 frontend/.next
+memory
 
 # dependencies
 /node_modules
