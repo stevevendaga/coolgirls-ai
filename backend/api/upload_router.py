@@ -167,7 +167,7 @@ async def get_uploaded_files(
                 "filePath": str(file_path),
                 "createdAt": doc.createdAt,
                 "updatedAt": doc.updatedAt,
-                "fileUrl": f"http://127.0.0.1:8000/{file_path}"  # URL to access the file
+                "fileUrl": f"http://127.0.0.1:8000/api/files/{category_name}/{doc.fileName}"  
             })
         
         return result
@@ -315,22 +315,26 @@ async def replace_uploaded_file(
 
 
 # Add a file serving endpoint
-@router.get("/files/{category_id}/{filename}")
-async def serve_file(category_id: str, filename: str):
-    # Get category name from DB
+@router.get("/files/{category_name}/{filename}")
+async def serve_file(category_name: str, filename: str):
+    # Verify category name is valid
     db = SessionLocal()
     try:
-        category = db.query(Category).filter(Category.id == int(category_id)).first()
+        category = db.query(Category).filter(Category.name == category_name).first()
         if not category:
             raise HTTPException(status_code=404, detail="Category not found")
     finally:
         db.close()
     
-    file_path = Path("uploads") / category.name / filename
+    file_path = Path("uploads") / category_name / filename
     
     if not file_path.exists():
         raise HTTPException(status_code=404, detail="File not found")
     
     # Return file as download
     from fastapi.responses import FileResponse
-    return FileResponse(path=file_path, media_type="application/octet-stream", filename=filename)
+    return FileResponse(
+        path=file_path, 
+        media_type="application/octet-stream", 
+        filename=filename
+    )
