@@ -1,0 +1,42 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "describe ukor mvendaga"
+  },
+  {
+    "role": "assistant",
+    "content": "Ukor Mvendaga is a professional with a strong background in computer science and health informatics. He holds a Master's degree in Computer Science from Joseph Sarwuan Tarka University, Makurdi, and a Bachelor's degree in Mathematics/Computer Science from the University of Agriculture, Makurdi. \n\nCurrently, he serves as the Health Informatics Senior Associate in Software Development at the Center for Integrated Health Programs (CIHP) in Abuja, where he leads the design, development, and maintenance of data systems and mobile applications to support health programs. \n\nPreviously, he managed resources and supported business strategies as a General Manager at Doomex Computer Links, and he has held roles such as Program Officer at the Inter-Gender Development Center and Head of Software Development at Sysmax Technologies Limited. He has extensive experience in developing software solutions, managing teams, and improving health data management systems."
+  },
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! How can I help you today?"
+  },
+  {
+    "role": "user",
+    "content": "Sysmax Technologies Limited"
+  },
+  {
+    "role": "assistant",
+    "content": "Sysmax Technologies Limited is a company based in Makurdi, Benue, where Ukor Mvendaga served as the Head of Software Development. In this role, he led and managed the software development and IT teams, overseeing the design, planning, and updates of various software projects including ERP systems, hospital management software, school portals, and website development. He was responsible for guiding technology decision-making, ensuring adherence to standards, and leading the design of product architectures based on user needs."
+  },
+  {
+    "role": "user",
+    "content": "ukor mvendaga certifications"
+  },
+  {
+    "role": "assistant",
+    "content": "Ukor Mvendaga has obtained several certifications, including:\n\n- **OpenHIE Academy Courses:**\n  - Introduction to Fast Healthcare Interoperability Resources (FHIR®)\n  - Introduction to Health Data Standards\n  - Using and Implementing Terminology\n  - Terminology\n\n- **Philanthropy University Programs:**\n  - Planning for Monitoring and Evaluation\n  - Data Collection, Analysis, Verification, Storage, and Data Use\n  - Fundamentals of Project Management\n\n- **University of Oslo Courses:**\n  - DHIS2 Fundamentals\n  - Data Quality and Confidentiality\n\n- **SkillUP E-learning Certifications:**\n  - Analyzing and Visualizing Data with Microsoft Power BI\n  - Monitoring & Evaluation (M&E) Fundamentals\n  - Gender M&E\n  - Python Programming\n\nThese certifications reflect his skills and expertise in health data standards, project management, data analysis, and programming."
+  }
+]

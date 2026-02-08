@@ -1,0 +1,21 @@
+fastapi
+uvicorn
+openai
+python-dotenv
+python-multipart
+sqlalchemy
+scikit-learn
+chromadb
+langchain
+langchain-core
+langchain-text-splitters
+langchain-openai
+langchain-chroma
+langchain-community
+langchain_huggingface
+litellm
+markitdown [all]
+plotly
+tiktoken
+ffmpeg
+sentence-transformers

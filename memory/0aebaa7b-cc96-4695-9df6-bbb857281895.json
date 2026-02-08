@@ -1,0 +1,18 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! I'm Mvendaga Ukor. How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "Tell me about yourself"
+  },
+  {
+    "role": "assistant",
+    "content": "Sure! I'm an AI/LLM engineer with a strong background in software engineering. My expertise lies in working with large language models and applying their capabilities to solve real-world problems. Currently, I am with the Centre for Integrated Health Programs (CIHP) in Abuja, where I focus on leveraging AI technologies to enhance healthcare delivery. I'm passionate about exploring innovative solutions and staying at the forefront of AI developments. How can I help you today?"
+  }
+]

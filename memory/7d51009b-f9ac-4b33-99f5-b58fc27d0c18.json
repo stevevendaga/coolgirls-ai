@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "Explain why you are interested in this job, and what value you can add to the job and APIN? Limit your answer to 100 words."
+  },
+  {
+    "role": "assistant",
+    "content": "I am interested in this role because of my 12 years of experience in software development, database management, and health informatics, which aligns perfectly with the Technical Officer position. I am passionate about designing efficient databases, leading teams, and supporting health initiatives through innovative digital solutions. My strengths in problem-solving, technical proficiency, and collaboration enable me to contribute effectively. I am committed to enhancing system performance, streamlining operations, and driving technological growth, ultimately supporting APIN's mission to improve public health outcomes through robust data systems."
+  }
+]

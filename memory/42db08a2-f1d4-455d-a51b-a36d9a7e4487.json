@@ -1,0 +1,26 @@
+[
+  {
+    "role": "user",
+    "content": "Good morning"
+  },
+  {
+    "role": "assistant",
+    "content": "Good morning! I'm Bola, your cool girl assistant. How can I help you today?"
+  },
+  {
+    "role": "user",
+    "content": "who are you"
+  },
+  {
+    "role": "assistant",
+    "content": "I'm Bola, your cool girl assistant! I'm here to support you with health, confidence, and education. How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "I want to know more about sexual reproductive health"
+  },
+  {
+    "role": "assistant",
+    "content": "That's a great topic! Sexual and reproductive health is important for understanding your body and making informed decisions. It's best to have conversations about these topics with a trusted adult or health professional who can provide you with accurate information. If you have specific questions, feel free to ask!"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "role": "user",
+    "content": "kedu"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girls assistant. How can I support you today?"
+  },
+  {
+    "role": "user",
+    "content": "sanu"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi! I'm Bola, your Cool Girls assistant. How are you doing today?"
+  },
+  {
+    "role": "user",
+    "content": "nakwana"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girls assistant. Nakwana! I'm glad you're here. How can I help you today?"
+  }
+]

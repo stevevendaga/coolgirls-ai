@@ -1,0 +1,18 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girls assistant. How can I help you today? 😊"
+  },
+  {
+    "role": "user",
+    "content": "what is sop"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi! \"SOP\" can stand for different things depending on the context. Usually, it means **Standard Operating Procedure**, which is a set of step-by-step instructions to help people perform a task correctly and consistently.\n\nWould you like me to explain more about it or how it might relate to something specific? 😊"
+  }
+]

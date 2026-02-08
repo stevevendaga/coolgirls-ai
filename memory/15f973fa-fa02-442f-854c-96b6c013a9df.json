@@ -1,0 +1,34 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girls assistant. How can I help you today?"
+  },
+  {
+    "role": "user",
+    "content": "what is computer"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi! A computer is a machine that helps us do many things like writing, playing games, learning, and even talking to friends. It follows instructions to work and can store lots of information. Do you want to know more about how computers work or what they can do?"
+  },
+  {
+    "role": "user",
+    "content": "who is kashimana"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi! I don't have information about Kashimana. If you want to know about someone specific, maybe you can tell me more or ask about a different topic. I'm here to help!"
+  },
+  {
+    "role": "user",
+    "content": "I expect you to look into the knowledge based and provide related information"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girls assistant. I support adolescent girls with health, confidence, and education. If you have questions about a specific person or topic, please share more details, and I'll do my best to help!"
+  }
+]

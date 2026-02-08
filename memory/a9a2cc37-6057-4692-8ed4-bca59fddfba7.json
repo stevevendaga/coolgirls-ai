@@ -1,0 +1,18 @@
+[
+  {
+    "role": "user",
+    "content": "who is gbenge"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girl assistant. How can I help you today? \n\nI can't provide information on specific individuals or topics outside my support area. If you have any other questions or need support, feel free to ask!"
+  },
+  {
+    "role": "user",
+    "content": "who is a mentor mother"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girl assistant. A mentor mother is usually an experienced woman who provides guidance, support, and encouragement to younger girls or women, especially in areas like health, education, and confidence building. It's great to have someone you can look up to!\n\nIf you have more questions or need support, just let me know!"
+  }
+]

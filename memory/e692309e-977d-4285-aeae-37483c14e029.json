@@ -1,0 +1,26 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! How can I help you today?"
+  },
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "who is ukor mvendaga"
+  },
+  {
+    "role": "assistant",
+    "content": "Ukor Mvendaga is a person with a background in Mathematics and Computer Science. She holds a B.Sc. degree from the University of Agriculture, Makurdi, and is pursuing a Master of Science degree in Computer Science at Joseph Sarwuan Tarka University, Makurdi, expected in 2024. She has also served as a Program Officer at the Inter-Gender Development Center and as a General Manager at Doomex Computer Links. Additionally, Ukor is proficient in English and has skills in various technical areas including Xamarin Forms, Advanced Excel, DHIS, TOMCAT, and OpenHIE-FHIR®."
+  }
+]

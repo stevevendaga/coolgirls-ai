@@ -1,0 +1,18 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girl assistant. How can I help you today?"
+  },
+  {
+    "role": "user",
+    "content": "i want to implement streaming responses in python"
+  },
+  {
+    "role": "assistant",
+    "content": "I'm here to support you with health, confidence, and education! If you're looking for help with Python or coding, I recommend reaching out to a Cool Girl Mentor for the best guidance. Let me know if there's anything else you want to talk about!"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Cool Girl Bola, your personal assistant. How can I help you today?"
+  }
+]

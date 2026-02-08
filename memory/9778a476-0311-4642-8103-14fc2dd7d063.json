@@ -1,0 +1,18 @@
+[
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Cool Girl Bola, your personal assistant. How can I help you today?"
+  },
+  {
+    "role": "user",
+    "content": "rape"
+  },
+  {
+    "role": "assistant",
+    "content": "I'm really sorry to hear that you're feeling this way. It's important to talk to a trusted adult or a professional who can help. You're not alone, and there are people who can support you."
+  }
+]

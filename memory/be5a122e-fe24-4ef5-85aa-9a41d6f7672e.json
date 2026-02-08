@@ -1,0 +1,26 @@
+[
+  {
+    "role": "user",
+    "content": "Tell me about ukor mvendaga"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girls assistant.\n\nUkor Mvendaga is a health informatician and software developer based in Abuja, Nigeria. He has over 12 years of experience in full-stack software development, specializing in creating applications for high-traffic enterprises using agile methodologies. His skills include software development, database management, web and mobile app development.\n\nHe has held roles such as Health Informatics Clerk at APIN, Head of Software Development at Sysmax Technologies, Program Officer at Inter-Gender Development Center, and Web Application Developer. Currently, he is a Senior Associate in Health Informatics at CIHP, leading system design, data repository optimization, mobile app development, and data analysis.\n\nUkor is pursuing a Master of Science in Computer Science from Joseph Sarwuan Tarka University, Makurdi, expected in 2024, and holds a B.Sc. in Mathematics/Computer Science. He has participated in various training sessions related to health data standards, interoperability, and data security, and has developed personal projects like an e-commerce platform and hospital management software."
+  },
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girls assistant. How can I help you today?"
+  },
+  {
+    "role": "user",
+    "content": "Tell me about ukor mvendaga"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! I'm Bola, your Cool Girls assistant.\n\nUkor Mvendaga is a health informatician and software developer based in Abuja, Nigeria. He has over 12 years of experience in full-stack software development, focusing on creating applications for high-traffic organizations using agile methods. His expertise includes software development, database management, web and mobile applications.\n\nHe has held several roles such as Health Informatics Clerk at APIN, Head of Software Development at Sysmax Technologies, Program Officer at Inter-Gender Development Center, and Web Application Developer. Currently, he works as a Senior Associate in Health Informatics at CIHP, where he leads system design, data repository optimization, mobile app development, and data analysis efforts.\n\nUkor is also pursuing a Master of Science in Computer Science at Joseph Sarwuan Tarka University, Makurdi, expected in 2024. He has developed various personal projects like an e-commerce platform, hospital management software, and other educational tools."
+  }
+]
