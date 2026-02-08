@@ -6,7 +6,7 @@ from markitdown import MarkItDown
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from utils.create_chunks_semantic import fetch_documents
+from utils.create_chunks_semantic import process_markdown_file
 
 # file input and output paths to convert and output in markdown format
 input_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "uploads")
@@ -125,7 +125,7 @@ def convert_to_markdown_single(
         output_file.write_text(processed_markdown, encoding="utf-8")
 
         # Create chunks and embeddings
-        #fetch_documents()
+        process_markdown_file(output_file)
 
         print(f"✓ Converted {file_path.name} → {output_file.name}")
         
