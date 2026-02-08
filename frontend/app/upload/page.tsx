@@ -1,6 +1,5 @@
-'use client'
-
 import { useState, useEffect } from 'react';
+import ProtectedLayout from '../protected-layout';
 import UploadData from '@/components/upload';
 
 export default function UploadPage() {
@@ -16,20 +15,22 @@ export default function UploadPage() {
   }, []);
 
   return (
-    <main className="min-h-screen flex flex-col bg-gray-50">
-      <div className="flex-1 overflow-y-auto p-4">
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-4xl mx-auto mt-9">
-            {isLoading ? (
-              <div className="flex justify-center items-center h-64">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
-              </div>
-            ) : (
-              <UploadData />
-            )}
+    <ProtectedLayout>
+      <main className="min-h-screen flex flex-col bg-gray-50">
+        <div className="flex-1 overflow-y-auto p-4">
+          <div className="container mx-auto px-4 py-8">
+            <div className="max-w-4xl mx-auto mt-9">
+              {isLoading ? (
+                <div className="flex justify-center items-center h-64">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
+                </div>
+              ) : (
+                <UploadData />
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </ProtectedLayout>
   );
 }
