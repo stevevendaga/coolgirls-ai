@@ -23,3 +23,29 @@
 .delay-200 {
   animation-delay: 0.2s;
 }
+
+/* Mobile sidebar styles */
+body.sidebar-open aside {
+  transform: translateX(0);
+}
+
+body:not(.sidebar-open) aside {
+  transform: translateX(-100%);
+}
+
+@media (min-width: 768px) {
+  body.sidebar-open aside,
+  body:not(.sidebar-open) aside {
+    transform: none;
+  }
+}
+
+/* Ensure proper z-index for mobile sidebar */
+aside {
+  z-index: 50;
+}
+
+/* Overlay styling */
+body.sidebar-open ~ .overlay {
+  display: block;
+}

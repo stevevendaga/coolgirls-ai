@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
-from api import chat_router, upload_router
+from api import chat_router, upload_router, widget_router
 
 load_dotenv()
 app = FastAPI()
@@ -19,6 +19,7 @@ app.add_middleware(
 
 app.include_router(upload_router.router)
 app.include_router(chat_router.router)
+app.include_router(widget_router.router)
 
 if __name__ == "__main__":
     import uvicorn

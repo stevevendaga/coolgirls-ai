@@ -1,4 +1,3 @@
-// components/upload.tsx
 'use client'
 
 import { useState, ChangeEvent, FormEvent, useRef, useEffect } from 'react';
